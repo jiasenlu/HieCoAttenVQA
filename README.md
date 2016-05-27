@@ -1,1 +1,1 @@
-# Code for Hierarchical Co-Attention for Visual Question Answering
+# Hierarchical Co-Attention for Visual Question Answering
