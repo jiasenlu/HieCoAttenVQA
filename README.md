@@ -1,10 +1,7 @@
 # Hierarchical Question-Image Co-Attention for Visual Question Answering
 
-<<<<<<< HEAD
 Train a Hierarchical Co-Attention model for Visual Question Answering. This current code can get 62.1 on Open-Ended and 66.1 on Multiple-Choice on test-standard split. For COCO-QA, this code can get 65.4 on Accuracy. For more information, please refer the paper [https://arxiv.org/abs/1606.00061](https://arxiv.org/abs/1606.00061)
-=======
-Train a Hierarchical Question-Image Co-Attention model for Visual Question Answering. This current code can get 62.1 on Open-Ended and 66.1 on Multiple-Choice on test-standard split. You can check Codalab leaderboard for more details.
->>>>>>> origin/master
+
 
 ### Requirements
 This code is written in Lua and requires [Torch](http://torch.ch/). The preprocssinng code is in Python, and you need to install [NLTK](http://www.nltk.org/) if you want to use NLTK to tokenize the question.
