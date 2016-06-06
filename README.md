@@ -103,6 +103,7 @@ To Evaluate VQA, you need to download the VQA [evaluation tool](https://github.c
 We use iTorch to demo the visual question answering with pre-trained model. 
 In the root folder, open `itorch notebook`, then you can load any image and ask question using the itorch notebook.
 
+Some of the data file can be download at [here](https://filebox.ece.vt.edu/~jiasenlu/codeRelease/co_atten/data_file/)
 ##### Attention Visualization
 
 
