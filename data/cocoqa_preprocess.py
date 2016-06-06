@@ -128,8 +128,8 @@ def main(params):
         tp = types[i]
         test.append({'ques_id': question_id, 'img_path': image_path, 'question': question, 'types': tp,'ans': ans})
 
-    json.dump(train, open('coco_qa_raw_train.json', 'w'))
-    json.dump(test, open('coco_qa_raw_test.json', 'w'))
+    json.dump(train, open('cocoqa_raw_train.json', 'w'))
+    json.dump(test, open('cocoqa_raw_test.json', 'w'))
 
 if __name__ == "__main__":
 

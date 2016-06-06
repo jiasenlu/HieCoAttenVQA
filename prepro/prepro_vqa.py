@@ -182,8 +182,8 @@ def main(params):
     imgs_train = json.load(open(params['input_train_json'], 'r'))
     imgs_test = json.load(open(params['input_test_json'], 'r'))
 
-    #imgs_train = imgs_train[:5000]
-    #imgs_test = imgs_test[:5000]
+    imgs_train = imgs_train[:5000]
+    imgs_test = imgs_test[:5000]
     # get top answers
     top_ans = get_top_answers(imgs_train, params)
     atoi = {w:i+1 for i,w in enumerate(top_ans)}
@@ -214,7 +214,7 @@ def main(params):
     # get the answer encoding.
     ans_train = encode_answer(imgs_train, atoi)
     
-    #ans_test = encode_answer(imgs_test, atoi)
+    ans_test = encode_answer(imgs_test, atoi)
     MC_ans_test = encode_mc_answer(imgs_test, atoi)
 
     # get the split
@@ -234,7 +234,7 @@ def main(params):
     f.create_dataset("ques_test", dtype='uint32', data=ques_test)
 
     f.create_dataset("answers", dtype='uint32', data=ans_train)
-    #f.create_dataset("ans_test", dtype='uint32', data=ans_test)
+    f.create_dataset("ans_test", dtype='uint32', data=ans_test)
     
     f.create_dataset("ques_id_train", dtype='uint32', data=question_id_train)
     f.create_dataset("ques_id_test", dtype='uint32', data=question_id_test)
@@ -277,8 +277,8 @@ if __name__ == "__main__":
     parser.add_argument('--input_test_json', default='../data/vqa_raw_test.json', help='input json file to process into hdf5')
     parser.add_argument('--num_ans', default=1000, type=int, help='number of top answers for the final classifications.')
 
-    parser.add_argument('--output_json', default='../data_prepro_all.json', help='output json file')
-    parser.add_argument('--output_h5', default='../data_prepro_all.h5', help='output h5 file')
+    parser.add_argument('--output_json', default='../data/vqa_data_prepro.json', help='output json file')
+    parser.add_argument('--output_h5', default='../data/vqa_data_prepro.h5', help='output h5 file')
   
     # options
     parser.add_argument('--max_length', default=26, type=int, help='max length of a caption, in number of words. captions longer than this get clipped.')

@@ -240,8 +240,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     # input json
-    parser.add_argument('--input_train_json', default='../data/coco_qa_raw_train.json', help='input json file to process into hdf5')
-    parser.add_argument('--input_test_json', default='../data/coco_qa_raw_test.json', help='input json file to process into hdf5')
+    parser.add_argument('--input_train_json', default='../data/cocoqa_raw_train.json', help='input json file to process into hdf5')
+    parser.add_argument('--input_test_json', default='../data/cocoqa_raw_test.json', help='input json file to process into hdf5')
 
     parser.add_argument('--output_json', default='../data/cocoqa_data_prepro.json', help='output json file')
     parser.add_argument('--output_h5', default='../data/cocoqa_data_prepro.h5', help='output h5 file')

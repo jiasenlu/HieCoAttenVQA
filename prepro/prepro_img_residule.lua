@@ -10,7 +10,7 @@ require 'hdf5'
 cjson=require('cjson') 
 require 'xlua'
 require 'cudnn'
-local t = require 'misc/transforms'
+local t = require 'image_model.transforms'
 
 -------------------------------------------------------------------------------
 -- Input arguments and options
@@ -18,8 +18,8 @@ local t = require 'misc/transforms'
 cmd = torch.CmdLine()
 cmd:text()
 cmd:text('Options')
-cmd:option('-input_json','','path to the json file containing vocab and answers')
-cmd:option('-image_root','','path to the image root')
+cmd:option('-input_json','../data/vqa_data_prepro.json','path to the json file containing vocab and answers')
+cmd:option('-image_root','/home/jiasenlu/data/','path to the image root')
 
 cmd:option('-residule_path', '')
 cmd:option('-batch_size', 10, 'batch_size')

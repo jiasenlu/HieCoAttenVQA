@@ -16,17 +16,15 @@ require 'xlua'
 cmd = torch.CmdLine()
 cmd:text()
 cmd:text('Options')
-cmd:option('-input_json','data/cocoqa_data_prepro.json','path to the json file containing vocab and answers')
+cmd:option('-input_json','../data/vqa_data_prepro.json','path to the json file containing vocab and answers')
 cmd:option('-image_root','/home/jiasenlu/data/','path to the image root')
-cmd:option('-cnn_proto', '/home/jiasenlu/code/vqa_code/vqaSoA/CNN_model/VGG_ILSVRC_19_layers_deploy.prototxt', 'path to the cnn prototxt')
-cmd:option('-cnn_model', '/home/jiasenlu/code/vqa_code/vqaSoA/CNN_model/VGG_ILSVRC_19_layers.caffemodel', 'path to the cnn model')
---cmd:option('-cnn_proto', '/home/jiasenlu/code/vqa_code/vqaSoA/CNN_model/ResNet-101-deploy.prototxt', 'path to the cnn prototxt')
---cmd:option('-cnn_model', '/home/jiasenlu/code/vqa_code/vqaSoA/CNN_model/ResNet-101-model.caffemodel', 'path to the cnn model')
+cmd:option('-cnn_proto', '../image_model/VGG_ILSVRC_19_layers_deploy.prototxt', 'path to the cnn prototxt')
+cmd:option('-cnn_model', '../image_model/VGG_ILSVRC_19_layers.caffemodel', 'path to the cnn model')
 
 cmd:option('-batch_size', 20, 'batch_size')
 
-cmd:option('-out_name_train', 'data/cocoqa_data_img_vgg_train.h5', 'output name')
-cmd:option('-out_name_test', 'data/cocoqa_data_img_vgg_test.h5', 'output name')
+cmd:option('-out_name_train', '../data/vqa_data_img_vgg_train.h5', 'output name train')
+cmd:option('-out_name_test', '../data/vqa_data_img_vgg_test.h5', 'output name test')
 
 cmd:option('-gpuid', 6, 'which gpu to use. -1 = use CPU')
 cmd:option('-backend', 'cudnn', 'nn|cudnn')
