@@ -41,7 +41,7 @@ Here we use VGG_ILSVRC_19_layers [model](https://gist.github.com/ksimonyan/37851
 Head over to the `image_model` folder and run
 
 ```
-$ python download_model --download 'VGG' 
+$ python download_model.py --download 'VGG' 
 ```
 This will download the VGG_ILSVRC_19_layers model under `image_model` folder. To download the Deep Residual Model, you need to change the `VGG` to `Residual`.
 
