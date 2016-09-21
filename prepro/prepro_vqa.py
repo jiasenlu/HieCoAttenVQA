@@ -182,8 +182,7 @@ def main(params):
     imgs_train = json.load(open(params['input_train_json'], 'r'))
     imgs_test = json.load(open(params['input_test_json'], 'r'))
 
-    imgs_train = imgs_train[:5000]
-    imgs_test = imgs_test[:5000]
+
     # get top answers
     top_ans = get_top_answers(imgs_train, params)
     atoi = {w:i+1 for i,w in enumerate(top_ans)}
