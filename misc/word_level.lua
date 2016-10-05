@@ -37,9 +37,7 @@ function layer:__init(opt)
                       :add(nn.View(-1, 196, self.hidden_size))
                       :add(nn.Tanh())
                       :add(nn.Dropout(0.5))
-    end
-
-    self.mask = torch.Tensor()     
+    end  
 end
 
 
@@ -83,7 +81,8 @@ function layer:updateOutput(input)
   local img = input[2]
 
   local batch_size = seq:size(1)
-  self.mask:resizeAs(seq):zero()
+  self.mask = self.mask or torch.CudaByteTensor()
+  self.mask:resize(seq:size()):zero()
   self.mask[torch.eq(seq, 0)] = 1
 
   self.img_feat = self.cnn:forward(img)

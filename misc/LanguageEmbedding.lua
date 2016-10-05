@@ -1,7 +1,7 @@
 --
 require 'nn'
 require 'nngraph'
-require 'rnn'
+require 'misc.LookupTableMaskZero'
 require 'cudnn'
 
 local LanguageEmbedding = {}

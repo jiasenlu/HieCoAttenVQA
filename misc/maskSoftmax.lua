@@ -3,8 +3,14 @@ local maskSoftMax, _ = torch.class('nn.maskSoftMax', 'nn.Module')
 function maskSoftMax:updateOutput(input)
    local data = input[1]
    local mask = input[2]
-   data:maskedFill(mask, -9999999)
+   if(mask:type() == 'torch.CudaTensor') then
+      mask = mask:cudaByte()
+   end
    
+   data:maskedFill(mask, -9999999)
+   if(mask:type() == 'torch.CudaByteTensor') then
+      mask = mask:cuda()
+   end   
    data.THNN.SoftMax_updateOutput(
       data:cdata(),
       self.output:cdata()
@@ -15,7 +21,15 @@ end
 function maskSoftMax:updateGradInput(input, gradOutput)
    local data = input[1]
    local mask = input[2]
+   if(mask:type() == 'torch.CudaTensor') then
+      mask = mask:cudaByte()
+   end
+   
    data:maskedFill(mask, -9999999)
+   if(mask:type() == 'torch.CudaByteTensor') then
+      mask = mask:cuda()
+   end   
+   
    data.THNN.SoftMax_updateGradInput(
       data:cdata(),
       gradOutput[1]:cdata(),
