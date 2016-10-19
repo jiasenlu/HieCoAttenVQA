@@ -65,7 +65,7 @@ cmd:option('-losses_log_every', 600, 'How often do we save losses, for inclusion
 
 -- misc
 cmd:option('-id', '0', 'an id identifying this run/job. used in cross-val and appended when writing progress files')
-cmd:option('-backend', 'cudnn', 'nn|cudnn')
+cmd:option('-backend', 'cudnn', 'cudnn')
 cmd:option('-gpuid', 6, 'which gpu to use. -1 = use CPU')
 cmd:option('-seed', 123, 'random number generator seed to use')
 
