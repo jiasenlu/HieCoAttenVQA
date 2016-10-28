@@ -103,7 +103,7 @@ To Evaluate VQA, you need to download the VQA [evaluation tool](https://github.c
 
 ##### VQA on Single Image with Free Form Question
 
-We use iTorch to demo the visual question answering with pre-trained model. **The script only does the basic tokenize, and please make sure the question is all lowercase, and split by "space".**
+We use iTorch to demo the visual question answering with pre-trained model. **The script only does the basic tokenize, and please make sure the question is all lowercase, and split by "space".(it's better use NLTK to tokenize and transform the question, you can check the prepro.py for more details.)** 
 
 In the root folder, open `itorch notebook`, then you can load any image and ask question using the itorch notebook.
 
