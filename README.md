@@ -93,7 +93,10 @@ to train **Alternating co-attention** model on VQA using VGG image feature. You 
 
 ##### Evaluate using Pre-trained Model
 The pre-trained model can be download [here](https://filebox.ece.vt.edu/~jiasenlu/codeRelease/co_atten/model/)
-**Note**, since the code only save parameters, and once update the maskedSoftmax function, the weight can not correctly reload. Please use the orginial code for the pre-trained model. https://github.com/jiasenlu/HieCoAttenVQA/tree/764943a1080caa3a78268d25263342de157ea720
+**Note**, if you use the vqa [train](https://filebox.ece.vt.edu/~jiasenlu/codeRelease/co_atten/model/vqa_model/model_alternating_train_vgg.t7) model, you should use the corresponding json file form [here](https://filebox.ece.vt.edu/~jiasenlu/codeRelease/co_atten/data_file/vqa_data_prepro.json)
+
+if you use the vqa [train+val](https://filebox.ece.vt.edu/~jiasenlu/codeRelease/co_atten/model/vqa_model/model_alternating_train-val_vgg.t7) model, you should use the corresponding json file form [here](https://filebox.ece.vt.edu/~jiasenlu/codeRelease/co_atten/data_file/vqa_data_prepro_all.json)
+
 ##### Metric
 
 To Evaluate VQA, you need to download the VQA [evaluation tool](https://github.com/VT-vision-lab/VQA). To evaluate COCO-QA, you can use script `evaluate_cocoqa.py` under `metric/` folder. If you need to evaluate based on WUPS, download the evaluation script from [here](http://datasets.d2.mpi-inf.mpg.de/mateusz14visual-turing/calculate_wups.py) 
