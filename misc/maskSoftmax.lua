@@ -32,7 +32,7 @@ function maskSoftMax:updateGradInput(input, gradOutput)
    
    data.THNN.SoftMax_updateGradInput(
       data:cdata(),
-      gradOutput[1]:cdata(),
+      gradOutput:cdata(),
       self.gradInput:cdata(),
       self.output:cdata()
    )
