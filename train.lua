@@ -40,7 +40,7 @@ cmd:option('-feature_type', 'VGG', 'VGG or Residual')
 
 cmd:option('-hidden_size',512,'the hidden layer size of the model.')
 cmd:option('-rnn_size',512,'size of the rnn in number of hidden nodes in each layer')
-cmd:option('-batch_size',20,'what is theutils batch size in number of images per batch? (there will be x seq_per_img sentences)')
+cmd:option('-batch_size',300,'what is theutils batch size in number of images per batch? (there will be x seq_per_img sentences)')
 cmd:option('-output_size', 1000, 'number of output answers')
 cmd:option('-rnn_layers',2,'number of the rnn layer')
 
