@@ -31,6 +31,6 @@ if __name__ == "__main__":
     # input json  
     args = parser.parse_args()
     params = vars(args)
-    print 'parsed input parameters:'
-    print json.dumps(params, indent = 2)
+    print('parsed input parameters:')
+    print(json.dumps(params, indent = 2))
     main(params)
